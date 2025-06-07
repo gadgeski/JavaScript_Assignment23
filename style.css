@@ -1,0 +1,158 @@
+body {
+  font-family: "Open Sans", sans-serif;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-height: 100vh;
+  margin: 0;
+  background-color: #c0c0c0;
+  color: #333;
+  padding-top: 50px;
+}
+
+h1 {
+  color: #007bff;
+  margin-bottom: 40px;
+}
+
+.quiz-container {
+  background-color: #ffffff;
+  padding: 40px;
+  border-radius: 10px;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+  text-align: center;
+  width: 100%;
+  max-width: 700px;
+}
+
+.question-display {
+  font-size: 1.8em;
+  font-weight: bold;
+  margin-bottom: 30px;
+  color: #34495e;
+}
+
+.options-container {
+  display: flex;
+  flex-direction: column;
+  gap: 15px; /* 選択肢間の隙間 */
+  margin-bottom: 30px;
+}
+
+.option-button {
+  padding: 15px 20px;
+  font-size: 1.1em;
+  border: 2px solid #ddd;
+  border-radius: 8px;
+  background-color: #f8f8f8;
+  color: #555;
+  cursor: pointer;
+  transition: background-color 0.3s ease, border-color 0.3s ease;
+  text-align: left; /* テキストを左寄せ */
+  outline: none;
+}
+
+.option-button:hover {
+  background-color: #e9ecef;
+  border-color: #c9d0d6;
+}
+
+.option-button.selected {
+  background-color: #007bff;
+  color: white;
+  border-color: #0056b3;
+}
+
+.option-button.correct {
+  background-color: #28a745;
+  color: white;
+  border-color: #218838;
+}
+
+.option-button.wrong {
+  background-color: #dc3545;
+  color: white;
+  border-color: #c82333;
+}
+
+.next-button {
+  padding: 12px 25px;
+  font-size: 1.2em;
+  cursor: pointer;
+  background-color: #6c757d;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  transition: background-color 0.3s ease;
+  margin-top: 20px;
+}
+
+.next-button:hover {
+  background-color: #5a6268;
+}
+
+.next-button:disabled {
+  background-color: #cccccc;
+  cursor: not-allowed;
+}
+
+.result-display {
+  font-size: 1.8em;
+  font-weight: bold;
+  margin-top: 30px;
+  color: #28a745;
+}
+/*==================================================
+
+Box
+
+==================================================*/
+.box {
+  width: 720px;
+  height: 480px;
+  margin: 13% auto 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  font-size: 32px;
+  font-weight: bold;
+  position: relative;
+  transition: 0.4s;
+}
+.box::before {
+  content: "";
+  width: 50px;
+  height: 50px;
+  border-top: 2px solid rgba(255, 255, 255, 0.5);
+  border-left: 2px solid rgba(255, 255, 255, 0.5);
+  position: absolute;
+  top: -1px;
+  left: -1px;
+  transition: 0.4s;
+  transition-delay: 0.5s;
+}
+.box::after {
+  content: "";
+  width: 50px;
+  height: 50px;
+  border-bottom: 2px solid rgba(255, 255, 255, 0.5);
+  border-right: 2px solid rgba(255, 255, 255, 0.5);
+  position: absolute;
+  bottom: -1px;
+  right: -1px;
+  transition: 0.4s;
+  transition-delay: 0.5s;
+}
+.box:hover:before,
+.box:hover::after {
+  width: 100%;
+  height: 100%;
+  border-color: rgba(255, 255, 255, 0.3);
+  transition-delay: 0s;
+}
+.box:hover {
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(15px);
+  transition-delay: 0.3s;
+}
